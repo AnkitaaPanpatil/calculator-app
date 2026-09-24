@@ -1,0 +1,35 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #e2e8f0; background: #020617; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { border: 0; cursor: pointer; font: inherit; }
+.app { min-height: 100vh; display: grid; place-items: center; padding: 24px; color: #172033; background: radial-gradient(circle at top, #dbeafe, #f8fafc 55%); transition: .25s; }
+.app.dark { color: #e2e8f0; background: radial-gradient(circle at top, #1e293b, #020617 65%); }
+.calculator { width: min(100%, 520px); padding: clamp(18px, 5vw, 30px); border: 1px solid rgba(148,163,184,.22); border-radius: 28px; background: rgba(255,255,255,.78); box-shadow: 0 24px 70px rgba(15,23,42,.18); backdrop-filter: blur(14px); }
+.dark .calculator { background: rgba(15,23,42,.88); box-shadow: 0 24px 70px rgba(0,0,0,.35); }
+header, .toolbar { display: flex; align-items: center; justify-content: space-between; }
+.eyebrow { margin: 0 0 4px; color: #6366f1; font-size: .7rem; font-weight: 800; letter-spacing: .14em; }
+h1 { margin: 0 0 20px; font-size: clamp(1.7rem, 7vw, 2.4rem); }
+.theme-toggle { width: 42px; height: 42px; border-radius: 50%; color: inherit; background: rgba(148,163,184,.16); font-size: 1.2rem; }
+.display-wrap { padding: 18px; min-height: 126px; border-radius: 18px; background: #e2e8f0; text-align: right; overflow: hidden; }
+.dark .display-wrap { background: #020617; }
+.expression { min-height: 24px; color: #64748b; font-size: .9rem; overflow-wrap: anywhere; }
+.display { margin-top: 8px; font-size: clamp(2rem, 9vw, 3rem); font-weight: 700; overflow-wrap: anywhere; }
+.toolbar { margin: 14px 0; color: #64748b; font-size: .8rem; }
+.toolbar button { padding: 7px 12px; border-radius: 8px; color: #64748b; background: rgba(148,163,184,.15); font-size: .75rem; font-weight: 800; }
+.toolbar button.active { color: white; background: #6366f1; }
+.keypad { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; }
+.key { min-height: 52px; border-radius: 13px; color: inherit; background: #e2e8f0; font-size: 1rem; font-weight: 650; transition: transform .1s, filter .2s; }
+.dark .key { background: #1e293b; }
+.key:hover { filter: brightness(1.1); }
+.key:active { transform: scale(.96); }
+.key.function { color: #6366f1; background: #e0e7ff; }
+.dark .key.function { background: #312e81; color: #c7d2fe; }
+.key.operator { color: white; background: #6366f1; }
+.key.secondary { color: #475569; background: #cbd5e1; }
+.dark .key.secondary { color: #cbd5e1; background: #334155; }
+.key.danger { color: white; background: #ef4444; }
+.key.constant { color: white; background: #0ea5e9; }
+.key.equals { color: white; background: #10b981; }
+.key.wide { grid-column: span 2; }
+.hint { margin: 18px 0 0; color: #64748b; text-align: center; font-size: .75rem; }
+@media (max-width: 420px) { .app { padding: 10px; } .calculator { border-radius: 20px; padding: 16px; } .keypad { gap: 6px; } .key { min-height: 46px; font-size: .9rem; } }
